@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Map, Filter, Reduce funtion outputs</h2>
+
+<script>
+
+    // map function
+    const num = [1, 2, 3, 4, 5];
+    const multiplyNum = num.map((num) => num * 5);
+    console.log("Map function to print multiplyNum array " + multiplyNum);
+
+    const names = ["Kuldeep", "Vikas", "Aman", "Abhijeet", "Deepanshu"];
+    let greeting = names.map((names) => names + " Welcome");
+    console.log("Map function to add welcome in string names " + greeting);
+
+    // filter function
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let evenNum = numbers.filter((numbers) => numbers % 2 == 0);
+    console.log("filter function to print even array " + evenNum);
+
+    // reduce function
+    const arr = [1, 2, 3, 4, 5];
+    let sumOfArr = arr.reduce((arr, num) => arr + num, 0);
+    let mulOfArr = arr.reduce((arr, num) => arr * num, 1)
+    console.log("reduce function to print sumOf array " + sumOfArr);
+    console.log("reduce function to print mulOf array " + mulOfArr);
+
+</script>
+
+</body>
+</html> 

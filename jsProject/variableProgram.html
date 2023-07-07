@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Variable Program</h2>
+
+<script>
+
+    let name = "Kuldeep Prajapati";
+    const phoneNo = 7836952128;
+    let profile = "NodeJs devloper";
+    const birthday = '02.07.2001';
+
+    window.alert("Showing kuldeep details in console");
+
+    console.log(name);
+    console.log(phoneNo);
+    console.log(profile);
+    console.log(birthday);
+
+    function letfun() {
+        if (true) {
+            let x = 10;
+            console.log(x); // 10
+        }
+        console.log(x); // throw error undifined 
+    }
+
+    function varfun() {
+    if (true) {
+        var y = 10;
+        console.log(y); // 10
+    }
+
+        console.log(y); // 10
+    }
+
+    letfun();
+    varfun();
+
+</script>
+
+</body>
+</html> 
