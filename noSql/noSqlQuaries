@@ -1,0 +1,117 @@
+// db.trainingMongoDB.insertMany([
+// {
+// "item": "donut",
+// "name": "Cake",
+// "ppu": 0.55,
+// "batters":
+// {
+// "batter":
+// [
+// { "id": "1001", "type": "Regular" },
+// { "id": "1002", "type": "Chocolate" },
+// { "id": "1003", "type": "Blueberry" },
+// { "id": "1004", "type": "Devil's Food" }
+// ]
+// },
+// "topping":
+// [
+// { "id": "5001", "type": "None" },
+// { "id": "5002", "type": "Glazed" },
+// { "id": "5005", "type": "Sugar" },
+// { "id": "5007", "type": "Powdered Sugar" },
+// { "id": "5006", "type": "Chocolate with Sprinkles" },
+// { "id": "5003", "type": "Chocolate" },
+// { "id": "5004", "type": "Maple" }
+// ]
+// }]);
+
+// db.products.insertMany( [
+//   { "_id": 1, "results": [ { "product": "abc", "score": 10 },
+//                             { "product": "xyz", "score": 5 } ] },
+//   { "_id": 2, "results": [ { "product": "abc", "score": 8 },
+//                             { "product": "xyz", "score": 7 } ] },
+//   { "_id": 3, "results": [ { "product": "abc", "score": 7 },
+//                             { "product": "xyz", "score": 8 } ] },
+//   { "_id": 4, "results": [ { "product": "abc", "score": 7 },
+//                             { "product": "def", "score": 8 } ] }
+// ] )
+
+// db.trainingMongoDB.find()
+// db.products.find()
+// db.products.find(
+//   { results: { $elemMatch: { product: "xyz", score: { $gte: 8 } } } }
+// )
+
+// ---------------New Document Inserted------------
+// db.trainingMongoDB.insertOne({
+//     batters:{batter:{ "id": "1000", "type": "none" }}
+// })
+
+// -----------------Insert into existing embadded document(push)------
+
+// db.products.updateOne(
+//   { "_id": 2 },
+//   { $push: { "results":{ "id": "1000", "type": "None" }} } 
+// )
+
+// ------------------Delete from embadded document(pull)-----------------
+// db.products.updateOne(
+//   { "_id": 3 },
+//   { $pull: { "results":{ "product": "xyz", "score": 8 } } }
+// )
+
+// -------------------Pull all data from embadded document(pull)-----------------?
+
+// db.products.updateOne(
+//   { "_id": 2 },
+//   { $pullAll: {"results":1} }
+// )
+
+// ---------------------------update many command-----------------------
+
+// db.trainingMongoDB.updateMany({},{$set:{"batters.batter": "updated"}})
+
+// --------------------------$exists------------------------
+
+// db.trainingMongoDB.insertOne({
+//   "_id": 12,
+//   "name": "John Doe",
+//   "address": {
+//     "street": "123 Main St",
+//     "city": "Exampleville",
+//     "country": "Example Country"
+//   }
+// })
+
+// db.trainingMongoDB.find({ "address": { $exists: true } })   //shows only that doc having address
+
+// db.trainingMongoDB.find({ "address.city": { $exists: true } })
+
+// db.trainingMongoDB.find({ "address.city": { $exists: false } })   //shows all the docs don't having address.city
+
+
+// -----------------------------------------$match (aggrigation)--------------------
+
+// db.trainingMongoDB.aggregate([
+//   {
+//     $match: { "address.city": "Exampleville" }
+//   }
+// ])
+
+// ----------------------------------$inc operator----------------------------------
+
+// db.products.insertOne({
+//   name: "Vikash",
+//   stats: {
+//     score: 10,
+//     level: 5
+//   }
+// }
+// )
+// to increment by 4
+// db.products.updateOne({name:"Vikash"},{$inc:{"stats.score":4}})
+
+// score: 14
+
+// to decrement by 3
+// db.products.updateOne({name:"Vikash"},{$inc:{"stats.score":-3}})
