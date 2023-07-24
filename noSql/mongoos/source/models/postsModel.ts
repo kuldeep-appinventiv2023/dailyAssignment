@@ -21,10 +21,10 @@ const commentSchema = new mongoose.Schema({
 });
 
 const postSchema = new mongoose.Schema({
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   image_URL: {type: String, required: true },
   caption: { type: String, required: true },
-  comments: { type : commentSchema, required: true},
+  comments: { type : commentSchema},
   created_at: { type: Date, default: Date.now },
   updated_at: { type: Date, default: Date.now }
 });
