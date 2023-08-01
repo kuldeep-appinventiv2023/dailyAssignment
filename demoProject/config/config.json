@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "kuldeep@321",
+    "database": "demoProject",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "kuldeep@321",
+    "database": "demoProject",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "kuldeep@321",
+    "database": "demoProject",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
