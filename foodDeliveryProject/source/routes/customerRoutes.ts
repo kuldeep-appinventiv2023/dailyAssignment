@@ -12,14 +12,12 @@ import { signupCustomerController,
 const customerRouter = express.Router();
 
 customerRouter.post('/customerSignup', signupCustomerController);
+customerRouter.get('/verify', verifyMail);
 customerRouter.post('/customerLogin', loginCustomerController);
 customerRouter.post('/viewCustomerProfile', authMiddleware, getCustomerProfileController);
 customerRouter.post('/updateCustomerProfile', authMiddleware, updateCustomerProfileController);
 customerRouter.post('/deleteCustomerProfile', authMiddleware, deleteCustomerProfileController);
 customerRouter.post('/forgetCustomerPassword', authMiddleware, forgetCustomerPasswordController);
 customerRouter.post('/customerLogout', authMiddleware, customerLogoutController);
-
-// customerRouter.post('/register', signupCustomerController);
-customerRouter.get('/verify', verifyMail);
 
 export default customerRouter;

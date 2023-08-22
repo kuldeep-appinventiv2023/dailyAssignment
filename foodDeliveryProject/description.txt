@@ -40,12 +40,14 @@ Session {
 Resturant {
     resturantId int PK
     menuId int FK references Menu
-    resturantName String 
+    resturantName String
+    resturantPhoneNo String
+    resturantPhoto blob 
     openingTime Date
     closingTime Date
     Rating float
     Address {
-        houseNo String
+        resturantNo String
         streetNo int
         landmark String
         city String
@@ -122,7 +124,7 @@ Admin Schema:
 login Admin, view Profil, Update Profil, Delete Account
 
 Restaurant Schema:
-Create Restaurant, Get All Restaurants, Get Restaurant by ID, Get Restaurant by Name, Update Restaurant, Delete Restaurant
+Add Restaurant, Get All Restaurants, Get Restaurant by ID, Get Restaurant by cityName, Get Restaurant by Name, Update Restaurant, Delete Restaurant
 
 Menu Schema:
 Create Menu Item, Get All Menu Items, Get Menu Item by ID, Get Menu Items by Category, Update Menu Item, Delete Menu Item
