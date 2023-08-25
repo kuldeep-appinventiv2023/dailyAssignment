@@ -39,6 +39,7 @@ Session {
 
 Resturant {
     resturantId int PK
+    categoryId int FK references Categories
     menuId int FK references Menu
     resturantName String
     resturantPhoneNo String
@@ -53,7 +54,7 @@ Resturant {
         city String
         state String
         pinCode int
-    }      
+    }    
 }
 
 Menu {
@@ -63,6 +64,7 @@ Menu {
     price float  
     image Blob
     isAvailable boolean
+    que
 }
 
 Category{
@@ -85,6 +87,7 @@ Orders {
 
 DeliveryStaff {
     staffId int PK
+    resturantId FK references Restaurant
     firstName String
     lastName String 
     contactNumber String 
@@ -124,10 +127,11 @@ Admin Schema:
 login Admin, view Profil, Update Profil, Delete Account
 
 Restaurant Schema:
-Add Restaurant, Get All Restaurants, Get Restaurant by ID, Get Restaurant by cityName, Get Restaurant by Name, Update Restaurant, Delete Restaurant
+Add Restaurant, Get All Restaurants, Get Restaurant by ID, Get Restaurant by Categorie, Get Restaurant by cityName, Get Restaurant by Name, Update Restaurant, Delete Restaurant
 
 Menu Schema:
-Create Menu Item, Get All Menu Items, Get Menu Item by ID, Get Menu Items by Category, Update Menu Item, Delete Menu Item
+Create Menu Item, Get All Menu Items, Get Menu Item by ID, Get Menu Items by ResturantName, Get Menu Items by Categorie, Update Menu Item, Delete Menu Item
+after menu search show all resturantName
 
 Category Schema:
 Create Category, Get All Categories, Get Category by ID, Get Category by Name, Update Category, Delete Category
@@ -136,7 +140,10 @@ Delivery Staff Schema:
 Create Delivery Staff, Get All Delivery Staff, Get Delivery Staff by ID, Update Delivery Staff, Delete Delivery Staff
 
 Orders Schema:
-Get All Orders, Get Order by ID, Update Order Status
+Get All Orders 
+Get Orders by Restaurant API
+Get Orders by Delivery Staff API:
+
 
 Review Schema:
 Get All Reviews, Get Review by ID, Update Review, Delete Review
@@ -150,7 +157,7 @@ Customer Schema:
 signup Customer, login Customer, view Profil, Update Profil, Delete Account
 
 Orders Schema:
-Place Order, Get Orders, Get Order by ID, Cancel Order
+Place Order, Get Orders by Customer, Get Order by ID, Cancel Order
 
 Review Schema:
 Add Review, update review, Get Reviews, Get Review by ID
@@ -160,3 +167,10 @@ add Payment, Get Payment, Get Payment by ID
 
 Main feature 
 Sync data of category, resturant, Menu and menuItem from Zomato APIs and using rabbitMq
+
+faceset data laga kar pagination 
+get data in pages (contains 10 dataset)
+and next ten so ends on 
+
+cart 
+menuItem id 
