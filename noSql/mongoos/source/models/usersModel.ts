@@ -1,6 +1,5 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
-
 interface profile {
     name : String,
     bio : String,
@@ -9,19 +8,19 @@ interface profile {
 }
 
 interface User extends Document {
-  username: String;
-  email: String;
-  password: String;
+  username: string;
+  email: string;
+  password: string;
   profile: profile;
   created_at: Date;
   updated_at : Date;
 }
 
 const profileSchema = new mongoose.Schema({
-    name : { type: String, required: true },
-    bio :{ type: String, required: true },
-    accout_type : { type: String, required: true },
-    avator : { type: String, required: true }
+    name : { type: String },
+    bio :{ type: String},
+    accout_type : { type: String},
+    avator : { type: String}
   
 });
 
@@ -30,7 +29,7 @@ const userSchema = new mongoose.Schema({
     username: { type: String, required: true },
     email: { type: String, required: true },
     password: { type: String, required: true },
-    profile: { type : profileSchema, required: true},
+    profile: { type : profileSchema},
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
 });
