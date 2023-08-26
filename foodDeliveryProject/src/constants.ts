@@ -51,12 +51,12 @@ export class Constants {
       "An error occurred while fetching menu items by restaurant",
     fetchMenuItemsByCategoryError:
       "An error occurred while fetching menu items by category",
-      
-  menuItemNotFound: 'Menu item not found',
-  fetchMenuItemByIDError: 'Error fetching menu item by ID',
-  createMenuItemError: 'Error creating menu item',
-  updateMenuItemError: 'Error updating menu item',
-  deleteMenuItemError: 'Error deleting menu item',
+
+    menuItemNotFound: "Menu item not found",
+    fetchMenuItemByIDError: "Error fetching menu item by ID",
+    createMenuItemError: "Error creating menu item",
+    updateMenuItemError: "Error updating menu item",
+    deleteMenuItemError: "Error deleting menu item",
 
     staffNotFound: "Delivery staff not found",
     errorUpdatingStaff: "An error occurred while updating the delivery staff",
